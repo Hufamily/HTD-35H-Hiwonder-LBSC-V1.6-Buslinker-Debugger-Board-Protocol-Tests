@@ -20,6 +20,8 @@ def parse_pos_response(data: bytes) -> dict:
         return {}
 
     num_servos = data[idx + 4]
+    if num_servos == 0:
+        return {}
     positions  = {}
     offset     = idx + 5
     for _ in range(num_servos):
@@ -47,14 +49,12 @@ while time.time() < deadline:
     time.sleep(0.02)
 ser.close()
 
-# ── Parse hex from relay "< XX XX ..." lines ─────────────────────────────
+print(f"Raw bytes: {raw_all.hex(' ').upper() if raw_all else '(nothing)'}")
 
-response_bytes = b""
-for line in raw_all.decode("ascii", errors="replace").splitlines():
-    line = line.strip()
-    if line.startswith("<"):
-        response_bytes = bytes.fromhex(line[1:].strip().replace(" ", ""))
-        print(f"Response: {line}")
+# Strip echo of sent packet if present (half-duplex wiring bounces TX back)
+response_bytes = raw_all
+if response_bytes[:len(packet)] == packet:
+    response_bytes = response_bytes[len(packet):]
 
 # ── Display positions ─────────────────────────────────────────────────────
 
@@ -67,5 +67,5 @@ else:
         for sid, pos in positions.items():
             degrees = pos * 240 / 1000
             print(f"  Servo {sid:2d}:  raw={pos:4d}   angle={degrees:.1f}°")
-    else:
-        print("Could not parse response — raw bytes:", response_bytes.hex(" ").upper())
+    elif response_bytes:
+        print("Controller responded but found no servos — check servo is powered and ID is correct")
