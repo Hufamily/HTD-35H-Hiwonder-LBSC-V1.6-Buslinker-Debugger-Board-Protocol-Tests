@@ -4,8 +4,8 @@
 ### Hardware
 
 #### Wiring
-  Arduino TX1 ───────────────── Servo Controller TX
-  Arduino RX1 ───────────────── Servo Controller RX
+  Arduino TX1 ───────────────── Servo Controller RX
+  Arduino RX1 ───────────────── Servo Controller TX
   Arduino GND ───────────────── Servo Controller GND
   Arduino 5V  ───────────────── Servo Controller 5V
   12V Power Source───────────── Servo Controller Battery Port
