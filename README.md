@@ -5,9 +5,13 @@
 
 #### Wiring
   Arduino TX1 ───────────────── Servo Controller RX
+
   Arduino RX1 ───────────────── Servo Controller TX
+
   Arduino GND ───────────────── Servo Controller GND
+
   Arduino 5V  ───────────────── Servo Controller 5V
+
   12V Power Source───────────── Servo Controller Battery Port
 
 #### Other Specifications
@@ -46,6 +50,6 @@ python test.py
 
 [Hiwonder Wiki](https://wiki.hiwonder.com/en/latest/)
 
-Drive with Servo Controller: [https://drive.google.com/drive/folders/1B7h0Q0HydRYi348VFJnfbAmWay4W_1Sd](https://drive.google.com/drive/folders/1B7h0Q0HydRYi348VFJnfbAmWay4W_1Sd)
+Google Drive provided with Servo Controller: [https://drive.google.com/drive/folders/1B7h0Q0HydRYi348VFJnfbAmWay4W_1Sd](https://drive.google.com/drive/folders/1B7h0Q0HydRYi348VFJnfbAmWay4W_1Sd)
 
-Drive with Motor: [https://drive.google.com/drive/folders/1yaZ8iRYgWncdHPopioo7OYuHoGhrMxCi](https://drive.google.com/drive/folders/1yaZ8iRYgWncdHPopioo7OYuHoGhrMxCi)
+Google Drive provided with Motor: [https://drive.google.com/drive/folders/1yaZ8iRYgWncdHPopioo7OYuHoGhrMxCi](https://drive.google.com/drive/folders/1yaZ8iRYgWncdHPopioo7OYuHoGhrMxCi)
