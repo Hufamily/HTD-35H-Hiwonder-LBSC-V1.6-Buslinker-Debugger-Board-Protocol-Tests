@@ -11,8 +11,12 @@
   12V Power Source───────────── Servo Controller Battery Port
 
 #### Other Specifications
+
 Check port: Typically COM5
+
 If it's beeping, voltage might be too low (Don't go above 12.3V, needs to be above 6V)
+
+Update: Servo format is Servo Bus Controller (got a response)
 
 ### Software
 
